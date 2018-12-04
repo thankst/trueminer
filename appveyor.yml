@@ -26,9 +26,7 @@ install: |
   nvcc -V
 build_script:
 
-- set CMAKE_ARGS=-G "Visual Studio 15 2015 Win64" -H. -Bbuild -DETHASHCUDA=ON -DAPICORE=ON -DHUNTER_JOBS_NUMBER=%NUMBER_OF_PROCESSORS%
-- if "%CUDA_VER%" == "9.0" set CMAKE_ARGS=%CMAKE_ARGS% -T v140
-- cmake %CMAKE_ARGS%
+
 - cmake --build build --config Release --target package
 - ps: |
     . build/ethminer/buildinfo.ps1
